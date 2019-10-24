@@ -1,0 +1,20 @@
+@import "../../styles/base/colors";
+@import "../../styles/base/typography";
+
+.form-message {
+    margin-top: 15px;
+    display: block;
+    color: $text-color-error;
+}
+
+.form-group-button {
+    margin-top: 35px;
+}
+
+.error-button {
+    margin-top: 15px;
+}
+
+.error-message {
+    color: $text-color-error;
+}

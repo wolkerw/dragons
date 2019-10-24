@@ -1,0 +1,18 @@
+/**
+ * Import all base stylesheet
+ * Colors
+ * Typography
+ * Fonts
+ * Helpers
+ */
+
+@import
+	'/mixins',
+	'/typography',
+	'/colors',
+	'/grid';
+
+	body {
+		font-family: $font-primary;
+	}
+

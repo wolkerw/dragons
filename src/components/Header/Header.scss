@@ -1,0 +1,28 @@
+@import "../../styles/base/base";
+
+.header {
+    height: 52px;
+    background-color: $color-primary;
+    position: fixed;
+    color: #fff;
+    z-index: 999;
+
+    p {
+        font-size: 19px;
+        line-height: 22px;
+        margin-left: 25px;
+    }
+
+    .grid {
+        padding-top: 14px;
+
+        .menu {
+            text-align: right;
+            margin-top: 6px;
+        }
+    }
+}
+
+.header + * {
+    padding-top: 52px;
+}

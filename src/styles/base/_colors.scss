@@ -1,0 +1,67 @@
+/**
+ * Basic projetc colors
+ */
+
+//Primary colors
+
+$color-white: #fff;
+$color-black: #000;
+$color-black-disabled: rgba(0, 0, 0, 0.25);
+
+$color-primary: #292929;
+
+$color-secondary: #ececec;
+$color-secondary-active: #5a5a5a;
+$color-secondary-hover: darken($color-secondary, 9.5%);
+$color-secondary-select: darken($color-secondary, 57.3%);
+$color-secondary-disabled: darken($color-secondary, 25.5%);
+
+//Text colors
+$text-color-white: #fff;
+$text-color-white-disabled: rgba(255, 255, 255, 0.25);
+$text-color-disabled: #cacaca;
+
+$text-color-black: #000;
+
+$text-color-primary: #707070;
+$text-color-secondary: #5b5b5b;
+$text-color-error: #ff363e;
+$text-color-success: #1bf92a;
+
+//Error
+$color-error: #b10d14;
+
+//Success
+$color-success : #1bf92a;
+
+//Warning
+$color-warning : #ffc107;
+
+/*Font Colors*/
+.text-color-white {
+    color: $text-color-white;
+}
+
+.text-color-black {
+    color: $text-color-black;
+}
+
+.text-color-primary {
+    color: $text-color-primary;
+}
+
+.text-color-secondary {
+    color: $text-color-secondary;
+}
+
+.text-color-error {
+    color: $text-color-error;
+}
+
+.error {
+    color: $text-color-error;
+}
+
+.success {
+    color: $text-color-success;
+}

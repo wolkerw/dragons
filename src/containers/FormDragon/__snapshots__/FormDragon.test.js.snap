@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormLogin Component matches the snapshot 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+      type="text"
+    >
+      <div
+        className="input"
+        onBlur={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control form-control"
+          name="name"
+          onChange={[Function]}
+          placeholder="Nome"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="form-group"
+    >
+      <div
+        className="input"
+        onBlur={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control form-control"
+          name="type"
+          onChange={[Function]}
+          placeholder="Tipo"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="error-message text-1"
+    >
+      
+    </div>
+    <div
+      className="form-group-button"
+    >
+      <button
+        className="btn-login btn-rounded mt-2"
+        type="submit"
+      >
+        <span>
+          Cadastrar
+        </span>
+        
+      </button>
+    </div>
+  </form>
+</div>
+`;

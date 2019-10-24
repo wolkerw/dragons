@@ -1,0 +1,72 @@
+// Override default variables before the import
+$theme-colors: (
+    // primary: #d11744,
+    primary: #292929,
+    secondary: #ececec,
+    third: #000,
+    fourth: #5a5a5a
+);
+@import "~bootstrap/scss/bootstrap.scss";
+$enable-rounded: true;
+
+.cp-btn {
+    @extend .btn;
+    border-radius: 17.5px;
+
+    &.cp-btn-primary {
+        @extend .btn-primary;
+    }
+    &.cp-btn-outline-primary {
+        @extend .btn-outline-primary;
+        border: solid 1px;
+    }
+}
+.cp-modal {
+    @extend .modal;
+}
+.cp-modal-open {
+    @extend .modal-open;
+}
+.fade {
+    @extend .fade;
+}
+
+.cp-modal-dialog {
+    @extend .modal-dialog;
+}
+.cp-modal-content {
+    @extend .modal-content;
+    border-radius: 8px;
+}
+.fade.cp-modal-backdrop.show {
+    @extend .fade;
+    @extend .modal-backdrop;
+    @extend .show;
+    background-image: radial-gradient(
+        circle at 50% 50%,
+        rgba(0, 0, 0, 0.92),
+        rgba(23, 23, 23, 0.77)
+    );
+}
+.cp-modal-lg {
+    @extend .modal-lg;
+}
+
+.fade.cp-modal.show {
+    @extend .fade;
+    @extend .cp-modal;
+    @extend .show;
+    opacity: 1;
+}
+
+.cp-modal-dialog-centered {
+    @extend .modal-dialog-centered;
+}
+
+body {
+	text-align: center;
+}
+
+.jumbotron {
+	background-color: #FFF
+}

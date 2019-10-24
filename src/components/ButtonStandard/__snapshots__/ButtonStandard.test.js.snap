@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonStandard Component matches the snapshot 1`] = `
+<button
+  className="btn btn-primary"
+  onClick={[Function]}
+  type="buttom"
+>
+  
+  
+</button>
+`;

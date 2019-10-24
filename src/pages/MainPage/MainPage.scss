@@ -1,0 +1,26 @@
+@import "../../styles/base/base";
+
+body {
+    font-size: 16px;
+    font-family: $font-primary;
+}
+
+.container-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 52px;
+    z-index: 999;
+    background-color: $color-white;
+
+    .btn-arrow {
+        position: absolute;
+        left: -40px;
+        top: 1px;
+    }
+}
+
+.mainPage {
+    .form-message {
+        margin: 22px 0 0 0;
+    }
+}
