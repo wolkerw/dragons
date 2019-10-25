@@ -17,14 +17,14 @@ class InputPassword extends Component {
 
     render() {
         const { /*id, */ placeholder } = this.props;
-        const showHide = event => {
-            event.preventDefault();
-            event.stopPropagation();
+        // const showHide = event => {
+        //     event.preventDefault();
+        //     event.stopPropagation();
 
-            this.setState({
-                type: this.state.type === "text" ? "password" : "text"
-            });
-        };
+        //     this.setState({
+        //         type: this.state.type === "text" ? "password" : "text"
+        //     });
+        // };
 
         const handleChange = event => {
             const value = event.target.value.length > 0 ? true : false;

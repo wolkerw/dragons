@@ -3,13 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 // import imgLoading from "../../assets/images/loading-ellipsis.svg";
 
-/**
- * Button podendo ser só com ícone, só com texto ou com os dois
- * @param {Date} props.date data a extrair a hora
- * @author Otávio Bastilho, Gabriel de Oliveira Rigo
- * @copyright 06/2019
- */
-
 function ButtonStandard(props) {
     const {
         text,

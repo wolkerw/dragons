@@ -1,23 +1,17 @@
-import React, { useState } from "react";
-import { Row, OverlayTrigger, Tooltip } from "react-bootstrap";
+import React /*, { useState }*/ from "react";
+import { Row /*, OverlayTrigger, Tooltip*/ } from "react-bootstrap";
 import PropTypes from "prop-types";
 import _ from "lodash";
 // import { DateLabel } from "../Labels";
 // import StatusIcon from "../StatusIcon/StatusIcon";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
 import "./Order.scss";
-/**
- * Gera um Pedido a ser selecionado na lista de pedidos
- * @param {object} data a ser utilizado
- * @author Otávio Bastilho
- * @copyright 07/2019
- */
 
 function Order(props) {
     const {
         data,
-        /*functionProps,*/ id,
-        /*checkList,*/ status,
+        // /*functionProps,*/ id,
+        // /*checkList,*/ status,
         removeDragon,
         editDragon
     } = props;

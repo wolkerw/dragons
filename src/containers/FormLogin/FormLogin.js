@@ -83,56 +83,12 @@ class FormLogin extends Component {
     };
 
     validationServices = () => {
-        //Chamada do serviço de validação
-        //simulação do serviço de validação
-        //let logged = false;
-        //let profiles = [];
-
-        // TODO get token and profiles from authentication saga
-        /*if (this.state.login === "admin" && this.state.password === "admin") {
-            profiles = ["grp-meta-dev-root", "grp-meta-dev-root"];
-        } else if (
-            this.state.login === "123456" &&
-            this.state.password === "123456"
-        ) {
-            profiles = ["grp-meta-dev-po"];
-        } else if (
-            this.state.login === "carga" &&
-            this.state.password === "carga"
-        ) {
-            profiles = ["grp-meta-dev-carga"];
-        } else if (
-            this.state.login === "conciliacao" &&
-            this.state.password === "conciliacao"
-        ) {
-            profiles = ["mdl-meta-dev-conciliacao"];
-        } else if (
-            this.state.login === "relatorio" &&
-            this.state.password === "relatorio"
-        ) {
-            profiles = ["mdl-meta-dev-relatorio"];
-        } else if (
-            this.state.login === "agendamentos" &&
-            this.state.password === "agendamentos"
-        ) {
-            profiles = ["mdl-meta-dev-agendamento"];
-        }*/
-        //if (profiles.length) logged = true;
-
-        /*if (!logged) {
-            return this.setState({
-                validInputs: false,
-                firstInteraction: false
-            });
-        }*/
-
         this.setState({ validInputs: true, firstInteraction: true });
 
         const token =
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Im1ldGEiLCJzZW5oYSI6Im1ldGEifQ.dBDm1QTX-Nfu-eciOCh76z6LXzRLl-8hnmwm11zzcZc";
 
-        // TODO a chapa deve vir do back
-        this.saveLoginData(token /*, profiles this.state.login "888001"*/);
+        this.saveLoginData(token);
 
         this.login();
     };
@@ -143,7 +99,7 @@ class FormLogin extends Component {
     }
 
     render() {
-        const { lang, loginIsRequired } = this.props;
+        const { /*lang, */ loginIsRequired } = this.props;
         const {
             firstInteraction,
             validInputs,

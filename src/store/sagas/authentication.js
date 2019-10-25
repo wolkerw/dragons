@@ -218,8 +218,6 @@ function* getAuthenticationAsync() {
         // dispatch the action GET_AUTHENTICATION_ASYNC
         yield put({ type: "GET_AUTHENTICATION_ASYNC", payload: data });
     } catch (error) {
-        //TODO Este bloco em producao deverah ser melhor tratado e
-        //apresentar uma mensagem para o cliente
         console.log(error);
     }
 }

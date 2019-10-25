@@ -8,12 +8,12 @@ import OrderList from "../../containers/OrderList/OrderList";
 import "./MainPage.scss";
 
 class MainPage extends Component {
-    constructor(props) {
-        super(props);
-        /*this.state = {
-            errorMessage: null
-        };*/
-    }
+    // constructor(props) {
+    //     super(props);
+    //     /*this.state = {
+    //         errorMessage: null
+    //     };*/
+    // }
 
     /*loadMount = () => {
         this.setState({
@@ -51,13 +51,15 @@ class MainPage extends Component {
     };
 
     logout = () => {
-        localStorage.removeItem("TOKEN");
-        localStorage.removeItem("profiles");
+        // localStorage.removeItem("TOKEN");
+        // localStorage.removeItem("profiles");
+        this.props.logout();
         this.props.history.push(`/login`);
     };
 
     render() {
-        const { lang, orderList /*, permissions*/ } = this.props;
+        // const { lang, orderList /*, permissions*/ } = this.props;
+        console.log("mainpage this.props", this.props);
 
         return (
             <Fragment>

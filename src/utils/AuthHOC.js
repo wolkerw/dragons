@@ -1,20 +1,8 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 const AuthHOC = WrappedComponent => {
     class Auth extends Component {
-        isLogged = () => {
-            return localStorage.getItem("TOKEN"); // &&
-            // localStorage.getItem("profiles") &&
-            // localStorage.getItem("chapa")
-        };
-
-        // logout = () => {
-        //     localStorage.removeItem("TOKEN");
-        //     localStorage.removeItem("profiles");
-        //     // localStorage.removeItem("chapa");
-        // };
-
         /*componentDidMount = () => {
             if (this.isLogged()) {
                 let gotPermissions =
@@ -45,6 +33,19 @@ const AuthHOC = WrappedComponent => {
             // if redux lost permissions, get them again
             return this.props.authorization;
         };*/
+
+        logout = () => {
+            localStorage.removeItem("TOKEN");
+            localStorage.removeItem("profiles");
+        };
+
+        isLogged = () => {
+            console.log("islogged ? ", localStorage.getItem("TOKEN"));
+
+            return localStorage.getItem("TOKEN"); // &&
+            // localStorage.getItem("profiles") &&
+            // localStorage.getItem("chapa")
+        };
 
         render() {
             return (

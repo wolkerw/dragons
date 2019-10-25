@@ -108,7 +108,7 @@ class FormDragon extends Component {
     }*/
 
     render() {
-        const { lang, loginIsRequired, id, orders } = this.props;
+        const { /*lang, */ loginIsRequired, id, orders } = this.props;
         // console.log("id", id);
 
         //console.log("dragonId", id);

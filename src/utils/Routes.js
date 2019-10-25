@@ -18,8 +18,16 @@ import {
 // const PrivateRoute = ({ component: Component, ...rest }, test) => {
 class PrivateRoute /*React.*/ extends Component {
     render() {
+        const { isLogged, logout } = this.props;
+
+        console.log("private routes this.props", this.props);
+
         let Component = this.props.component;
-        let isLogged = this.props.isLogged();
+
+        console.log("private routes isLogged", isLogged());
+
+        //let isLogged = this.props.isLogged();
+
         //let permissions = this.props.getPermissions();
         //let currentPage = this.props.location.pathname.substr(1);
 
@@ -52,13 +60,14 @@ class PrivateRoute /*React.*/ extends Component {
                     render={(props, rest) =>
                         /*isLogged && (!permissions || !permissions.length) ? (
                             <h2 className="text-center">Carregando...</h2>
-                        ) : */ isLogged /*&&
+                        ) : */ isLogged() /*&&
                         havePermission*/ ? (
                             <div>
                                 <Redirect
                                     to="/main"
                                     //permissions={permissions}
-                                    isLogged={isLogged}
+                                    isLogged={isLogged()}
+                                    logout={logout}
                                 />
                                 <Component
                                     {...this.props}
@@ -86,7 +95,8 @@ class PrivateRoute /*React.*/ extends Component {
 
 class Routes extends Component {
     render() {
-        const { isLogged, redirect /*, getPermissions*/ } = this.props;
+        const { isLogged, redirect, logout /*, getPermissions*/ } = this.props;
+        console.log("routes this.props", this.props);
 
         // redirect to the page requested by the HOC
         if (redirect) {
@@ -107,6 +117,7 @@ class Routes extends Component {
                         path="/main"
                         component={MainPage}
                         isLogged={isLogged}
+                        logout={logout}
                         // getPermissions={getPermissions}
                     />
                     <PrivateRoute
