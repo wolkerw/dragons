@@ -6,7 +6,9 @@ exports[`ButtonStandard Component matches the snapshot 1`] = `
   onClick={[Function]}
   type="buttom"
 >
-  
+  <span>
+    Entrar
+  </span>
   
 </button>
 `;

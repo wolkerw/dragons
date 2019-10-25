@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+// import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
 import { Container, Row, Col } from "react-bootstrap";
 import FormLogin from "../../containers/FormLogin/FormLogin";
 import Header from "../../components/Header/Header";
-import en from "react-intl/locale-data/en";
+// import en from "react-intl/locale-data/en";
 import pt from "react-intl/locale-data/pt";
 import { addLocaleData } from "react-intl";
-import messages from "../../assets/i18n";
-import { Creators as Lang } from "../../store/ducks/language";
+// import messages from "../../assets/i18n";
+//import { Creators as Lang } from "../../store/ducks/language";
 // import logoLogin from "./../../assets/images/logos/logos-login.svg";
 import "./../../styles/custom-bootstrap.scss";
 // import "./LoginPage.scss";
 import "./LoginPage.scss";
 //Adicionando os Locales
 addLocaleData(pt);
-addLocaleData(en);
+// addLocaleData(en);
 
 class LoginPage extends Component {
     /*constructor() {

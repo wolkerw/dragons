@@ -1,27 +1,27 @@
 import { combineReducers } from "redux";
 
-import language from "./language";
+// import language from "./language";
 import login from "./login";
 import input from "./login";
 import orders from "./orders";
 import orderList from "./orderList";
-import freeGates from "./freeGates";
-import scheduling from "./scheduling";
+// import freeGates from "./freeGates";
+// import scheduling from "./scheduling";
 //import relatorio from "./relatorio";
 import authentication from "./authentication";
 // import authorization from "./authorization";
-import reconcile from "./reconcile";
+// import reconcile from "./reconcile";
 
 export default combineReducers({
-    language,
+    // language,
     login,
     orders,
     orderList,
     input,
-    freeGates,
-    scheduling,
+    // freeGates,
+    // scheduling,
     //relatorio,
-    authentication,
+    authentication
     // authorization,
-    reconcile
+    // reconcile
 });

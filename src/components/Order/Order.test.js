@@ -3,11 +3,11 @@ import Order from "./Order";
 import { IntlProvider } from "react-intl";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import messages from "../../assets/i18n";
+// import messages from "../../assets/i18n";
 
 configure({ adapter: new Adapter() });
 
-const country = "en";
+const country = "pt-BR";
 
 const orderData = {
     id: "5",
@@ -19,9 +19,9 @@ describe("Order Component", () => {
     const component = (
         <IntlProvider
             locale={country}
-            key={country}
-            messages={messages[{ country }]}
-            defaultLocale={country}
+            // key={country}
+            // messages={messages[{ country }]}
+            // defaultLocale={country}
         >
             <Order
                 data={orderData}

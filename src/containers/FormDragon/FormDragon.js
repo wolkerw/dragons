@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 // import { TextLabel } from "../../components/Labels";
 import Input from "../../components/Input/Input";
-import messages from "../../assets/i18n";
+// import messages from "../../assets/i18n";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
 import "./FormDragon.scss";
 import "../../styles/base/_typography.scss";

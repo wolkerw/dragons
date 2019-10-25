@@ -4,18 +4,18 @@ import { withRouter } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import FormDragon from "../../containers/FormDragon/FormDragon";
 import { matchPath } from "react-router";
-import messages from "../../assets/i18n";
-import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
-import OrderList from "../../containers/OrderList/OrderList";
+// import messages from "../../assets/i18n";
+// import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
+// import OrderList from "../../containers/OrderList/OrderList";
 import "./DragonPage.scss";
 
 class DragonPage extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
-        const { lang } = this.props;
+        // const { lang } = this.props;
 
         const match = matchPath(this.props.history.location.pathname, {
             path: "/dragon/:id",

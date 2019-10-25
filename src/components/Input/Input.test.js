@@ -4,13 +4,13 @@ import { IntlProvider } from "react-intl";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import renderer from "react-test-renderer";
-import messages from "../../assets/i18n";
+// import messages from "../../assets/i18n";
 
 configure({ adapter: new Adapter() });
 
-const country = "pt";
-const language = "pt-BR";
-const placeholder = messages[language].login;
+const country = "pt-BR";
+// const language = "pt-BR";
+const placeholder = "Login";
 const callback = () => {
     console.log("TESTE");
 };
@@ -21,9 +21,9 @@ describe("Input Component", () => {
     const component = (
         <IntlProvider
             locale={country}
-            key={country}
-            messages={messages[{ country }]}
-            defaultLocale={country}
+            // key={country}
+            // messages={messages[{ country }]}
+            // defaultLocale={country}
         >
             <Input
                 placeholder={placeholder}

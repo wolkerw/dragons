@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import messages from "../../assets/i18n";
+// import messages from "../../assets/i18n";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
 import OrderList from "../../containers/OrderList/OrderList";
 import "./MainPage.scss";

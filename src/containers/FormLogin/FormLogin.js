@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 // import { TextLabel } from "../../components/Labels";
 import Input from "../../components/Input/Input";
 import InputPassword from "../../components/InputPassword/InputPassword";
-import messages from "../../assets/i18n";
+// import messages from "../../assets/i18n";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
 import "./FormLogin.scss";
 import "../../styles/base/_typography.scss";
@@ -155,7 +155,7 @@ class FormLogin extends Component {
             <form onSubmit={this.handleSubmit}>
                 <div type="text" className="form-group">
                     <Input
-                        placeholder={messages[lang.name].login}
+                        placeholder="Login"
                         validateCallback={this.callback}
                         firstSubmit={firstInteraction}
                         isRequired={loginIsRequired}
@@ -164,7 +164,7 @@ class FormLogin extends Component {
                 </div>
                 <div className="form-group">
                     <InputPassword
-                        placeholder={messages[lang.name].placeholderPassword}
+                        placeholder="Senha"
                         validateCallback={this.callback}
                         firstSubmit={firstInteraction}
                     />
@@ -190,7 +190,7 @@ class FormLogin extends Component {
                                 ? loginIsValid && passwordIsValid
                                 : passwordIsValid)
                         }
-                        textId={messages[lang.name].login}
+                        textId="Entrar"
                         className={
                             "btn-login btn-rounded mt-2" +
                             (!(loginIsRequired

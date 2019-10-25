@@ -4,20 +4,20 @@ import { Provider } from "react-redux";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import renderer from "react-test-renderer";
-import ptTranslations from "../../assets/i18n/messages-pt.json";
+// import ptTranslations from "../../assets/i18n/messages-pt.json";
 import { IntlProvider } from "react-intl";
 import store from "../../store";
 
 configure({ adapter: new Adapter() });
-const country = "en-US";
+const country = "pt-BR";
 
 describe("FormLogin Component", () => {
     const component = (
         <IntlProvider
             locale={country}
-            key={country}
-            messages={ptTranslations}
-            defaultLocale={country}
+            // key={country}
+            // messages={ptTranslations}
+            // defaultLocale={country}
         >
             <Provider store={store}>
                 <FormDragonWithoutWithRouter />

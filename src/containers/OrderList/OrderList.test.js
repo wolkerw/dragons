@@ -4,21 +4,21 @@ import { IntlProvider } from "react-intl";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import renderer from "react-test-renderer";
-import messages from "../../assets/i18n";
+// import messages from "../../assets/i18n";
 import { Provider } from "react-redux";
 import store from "./../../store";
 
 configure({ adapter: new Adapter() });
 
-const country = "en";
+const country = "pt-BR";
 
 describe("OrderList Container", () => {
     const component = (
         <IntlProvider
             locale={country}
-            key={country}
-            messages={messages[{ country }]}
-            defaultLocale={country}
+            // key={country}
+            // messages={messages[{ country }]}
+            // defaultLocale={country}
         >
             <Provider store={store}>
                 <OrderListWithoutWithRouter checkList />
