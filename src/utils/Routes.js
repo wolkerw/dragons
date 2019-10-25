@@ -20,11 +20,7 @@ class PrivateRoute /*React.*/ extends Component {
     render() {
         const { isLogged, logout } = this.props;
 
-        console.log("private routes this.props", this.props);
-
         let Component = this.props.component;
-
-        console.log("private routes isLogged", isLogged());
 
         //let isLogged = this.props.isLogged();
 

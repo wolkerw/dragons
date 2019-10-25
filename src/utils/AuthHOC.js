@@ -40,11 +40,7 @@ const AuthHOC = WrappedComponent => {
         };
 
         isLogged = () => {
-            console.log("islogged ? ", localStorage.getItem("TOKEN"));
-
-            return localStorage.getItem("TOKEN"); // &&
-            // localStorage.getItem("profiles") &&
-            // localStorage.getItem("chapa")
+            return localStorage.getItem("TOKEN");
         };
 
         render() {

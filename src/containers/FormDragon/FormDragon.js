@@ -109,15 +109,16 @@ class FormDragon extends Component {
 
     render() {
         const { /*lang, */ loginIsRequired, id, orders } = this.props;
+        console.log("formdragon this.props", this.props);
         // console.log("id", id);
 
         //console.log("dragonId", id);
 
         const {
             firstInteraction,
-            validInputs /*,
+            validInputs,
             nameIsValid,
-            typeIsValid*/
+            typeIsValid
         } = this.state;
 
         return (
@@ -169,7 +170,7 @@ class FormDragon extends Component {
                             }
                         >
                             <ButtonStandard
-                                // disabled={!(typeIsValid && nameIsValid)}
+                                disabled={!id && !(typeIsValid && nameIsValid)}
                                 textId={id ? "Editar" : "Cadastrar"}
                                 className={
                                     "btn-login btn-rounded mt-2" //+

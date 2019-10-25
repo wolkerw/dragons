@@ -59,7 +59,6 @@ class MainPage extends Component {
 
     render() {
         // const { lang, orderList /*, permissions*/ } = this.props;
-        console.log("mainpage this.props", this.props);
 
         return (
             <Fragment>
