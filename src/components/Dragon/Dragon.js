@@ -5,9 +5,9 @@ import _ from "lodash";
 // import { DateLabel } from "../Labels";
 // import StatusIcon from "../StatusIcon/StatusIcon";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
-import "./Order.scss";
+import "./Dragon.scss";
 
-function Order(props) {
+function Dragon(props) {
     const {
         data,
         // /*functionProps,*/ id,
@@ -61,7 +61,7 @@ function Order(props) {
 
         //const dateRegex = /^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])(T|\s)(([0-1][0-9])|(2[0-3])):([0-5][0-9]):([0-5][0-9])(.|)(\d{7})$/;
 
-        const colCheckBox = (
+        const colRemove = (
             <div className="col-2 custom-col">
                 <div className="custom-checkbox">
                     <ButtonStandard
@@ -90,7 +90,7 @@ function Order(props) {
         if (objects.length > 0) {
             return (
                 <Row
-                    className="custom-order-row my-2"
+                    className="custom-dragon-row my-2"
                     // onClick={() => {
                     //     handleChecked();
                     //     if (
@@ -141,18 +141,8 @@ function Order(props) {
                             );
                         }
                     })}
-
-                    {/*checkList ? */ colCheckBox /*: ""*/}
-                    {/*checkList ? */ colEdit /*: ""*/}
-
-                    {/* {status ? (
-                        <StatusIcon
-                            status={newData[status]} //Passar para data
-                            id={`order-${id.replace(/[^\d]/g, "")}-status-icon`}
-                        />
-                    ) : (
-                        ""
-                    )} */}
+                    {colRemove}
+                    {colEdit}
                 </Row>
             );
         } else {
@@ -163,12 +153,8 @@ function Order(props) {
     }
 }
 
-Order.propTypes = {
+Dragon.propTypes = {
     data: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired
-    /*functionProps:
-        PropTypes.func ,
-    checkList: PropTypes.bool,
-    status: PropTypes.string*/
 };
-export default Order;
+export default Dragon;

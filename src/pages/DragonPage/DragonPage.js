@@ -4,16 +4,9 @@ import { withRouter } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import FormDragon from "../../containers/FormDragon/FormDragon";
 import { matchPath } from "react-router";
-// import messages from "../../assets/i18n";
-// import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
-// import OrderList from "../../containers/OrderList/OrderList";
 import "./DragonPage.scss";
 
 class DragonPage extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-
     render() {
         // const { lang } = this.props;
 
@@ -58,8 +51,8 @@ class DragonPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        lang: state.language,
-        orderList: state.orderList
+        // lang: state.language,
+        dragonList: state.dragonList
         //id: state.relatorio
     };
 };

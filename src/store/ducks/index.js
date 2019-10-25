@@ -3,8 +3,8 @@ import { combineReducers } from "redux";
 // import language from "./language";
 import login from "./login";
 import input from "./login";
-import orders from "./orders";
-import orderList from "./orderList";
+import dragons from "./dragons";
+import dragonList from "./dragonList";
 // import freeGates from "./freeGates";
 // import scheduling from "./scheduling";
 //import relatorio from "./relatorio";
@@ -15,8 +15,8 @@ import authentication from "./authentication";
 export default combineReducers({
     // language,
     login,
-    orders,
-    orderList,
+    dragons,
+    dragonList,
     input,
     // freeGates,
     // scheduling,

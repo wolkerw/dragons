@@ -165,9 +165,9 @@ class FormLogin extends Component {
 
 const mapStateToProps = state => {
     return {
-        authentication: state.authentication,
+        authentication: state.authentication
         //authorization: state.authorization,
-        lang: state.language
+        // lang: state.language
     };
 };
 

@@ -5,11 +5,11 @@ import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { Container } from "react-bootstrap";
 // import debounce from "lodash.debounce";
-import { Creators as List } from "../../store/ducks/orderList";
-import Order from "../../components/Order/Order";
-import "./OrderList.scss";
+import { Creators as List } from "../../store/ducks/dragonList";
+import Dragon from "../../components/Dragon/Dragon";
+import "./DragonList.scss";
 
-class OrderList extends Component {
+class DragonList extends Component {
     constructor(props) {
         super(props);
 
@@ -26,8 +26,8 @@ class OrderList extends Component {
 
     componentDidMount() {
         // Fazendo o primeiro load de usuários
-        this.props.getOrders();
-        this.props.orderList.cleanOrders();
+        this.props.dragonList.cleanDragons();
+        this.props.getDragons();
 
         this.loadList();
     }
@@ -53,19 +53,19 @@ class OrderList extends Component {
     //     }, 100);
     // }
 
-    handleChecked = (checked, order) => {
-        if (!checked) {
-            this.props.orderList.addOrder(order);
-        } else {
-            this.props.orderList.removeOrder(order);
-        }
-    };
+    // handleChecked = (checked, dragon) => {
+    //     if (!checked) {
+    //         this.props.dragonList.addDragon(dragon);
+    //     } else {
+    //         this.props.dragonList.removeDragon(dragon);
+    //     }
+    // };
 
     componentDidUpdate() {
         if (
-            this.props.orders &&
-            this.props.orders.length &&
-            this.props.orders[0] === "error" &&
+            this.props.dragons &&
+            this.props.dragons.length &&
+            this.props.dragons[0] === "error" &&
             !this.state.error
         ) {
             this.setState({
@@ -73,32 +73,20 @@ class OrderList extends Component {
                 isLoading: false
             });
         } else if (
-            this.props.orders &&
-            this.props.orders.length &&
+            this.props.dragons &&
+            this.props.dragons.length &&
             !this.state.list.length
         ) {
             this.setState({
-                list: this.props.orders,
+                list: this.props.dragons,
                 isLoading: false
             });
-
-            //return result;
-            //Populando o array de pedidos
-            /*const nextOrder = this.state.orders.map(order => order);
-
-            // Adiciona os próximos pedidos ao state
-            this.setState({
-                //Limitando o número total de registros
-                hasMore: this.state.list.length < 0,
-                isLoading: false,
-                list: [...this.state.list, ...nextOrder]
-            });*/
         }
     }
 
     loadList = () => {
         this.setState({ isLoading: true });
-        this.props.getOrders();
+        this.props.getDragons();
     };
 
     removeDragon = id => {
@@ -134,8 +122,8 @@ class OrderList extends Component {
         //const style = ("col-" + size).replace(".", "-");
 
         return (
-            <Container className="text-center order-list-container">
-                <div className="row order-list-header">
+            <Container className="text-center dragon-list-container">
+                <div className="row dragon-list-header">
                     <div className="col-4" key="Nome">
                         <span>Nome</span>
                     </div>
@@ -151,17 +139,17 @@ class OrderList extends Component {
                 </div>
                 {!error &&
                     !isLoading &&
-                    list.map((order, i) => {
+                    list.map((dragon, i) => {
                         return (
                             <Fragment key={i}>
-                                <Order
-                                    data={order}
-                                    functionProps={this.handleChecked}
-                                    id={`order-list-order-checkbox-${i + 1}`}
+                                <Dragon
+                                    data={dragon}
+                                    // functionProps={this.handleChecked}
+                                    id={`dragon-list-dragon-checkbox-${i + 1}`}
                                     status="idStatusConciliacao"
                                     removeDragon={this.removeDragon}
                                     editDragon={this.editDragon}
-                                    checkList
+                                    // checkList
                                 />
                             </Fragment>
                         );
@@ -169,7 +157,7 @@ class OrderList extends Component {
                 {error && (
                     <div>
                         Erro ao buscar os dragões. Verifique se tem conexão com
-                        aa internet e tente novamente mais tarde.
+                        a internet e tente novamente mais tarde.
                     </div>
                 )}
                 {isLoading && (
@@ -193,35 +181,35 @@ class OrderList extends Component {
 
 const mapStateToProps = state => {
     return {
-        orderList: state.orderList,
-        orders: state.orders
+        dragonList: state.dragonList,
+        dragons: state.dragons
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getOrders: () => dispatch({ type: "GET_ORDERS" }),
+        getDragons: () => dispatch({ type: "GET_DRAGONS" }),
         removeDragon: id =>
             dispatch({
                 type: "REMOVE_DRAGON",
                 id: id
             }),
-        orderList: bindActionCreators(List, dispatch)
+        dragonList: bindActionCreators(List, dispatch)
     };
 };
 
-OrderList.propTypes = {
-    checkList: PropTypes.bool
-};
+// DragonList.propTypes = {
+//     checkList: PropTypes.bool
+// };
 
-export const OrderListWithoutWithRouter = connect(
+export const DragonListWithoutWithRouter = connect(
     mapStateToProps,
     mapDispatchToProps
-)(OrderList);
+)(DragonList);
 
 export default withRouter(
     connect(
         mapStateToProps,
         mapDispatchToProps
-    )(OrderList)
+    )(DragonList)
 );

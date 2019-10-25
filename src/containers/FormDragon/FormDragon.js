@@ -8,7 +8,7 @@ import Input from "../../components/Input/Input";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
 import "./FormDragon.scss";
 import "../../styles/base/_typography.scss";
-import { Creators as List } from "../../store/ducks/orderList";
+import { Creators as List } from "../../store/ducks/dragonList";
 
 class FormDragon extends Component {
     constructor() {
@@ -30,10 +30,7 @@ class FormDragon extends Component {
     }
 
     componentDidMount() {
-        // Fazendo o primeiro load de usuários
-        //console.log("getting order this.props.id", this.props.id);
-
-        this.props.getOrder(this.props.id);
+        if (this.props.id) this.props.getDragon(this.props.id);
     }
 
     /*componentWillMount() {
@@ -52,16 +49,9 @@ class FormDragon extends Component {
         console.log("componentWillReceiveProps props", this.props);
     };*/
 
-    componentDidUpdate = () => {
+    /*componentDidUpdate = () => {
         console.log("2this.props", this.props);
-        /*if (this.props.orders.name) {
-            this.setState({ dragon: this.props.orders })
-            alert(
-                "Dragão " + this.props.orders.name + " cadastrado com sucesso!"
-            );
-            console.log("cadastrado this.props.orders.data", this.props.orders);
-        }*/
-    };
+    };*/
 
     callback = (text, stateName, valid) => {
         /*console.log("callback text", text);
@@ -102,13 +92,8 @@ class FormDragon extends Component {
         this.props.history.push(`/main`);
     }
 
-    /*componentDidUpdate() {
-        if (this.props.orders.name) {
-        }
-    }*/
-
     render() {
-        const { /*lang, */ loginIsRequired, id, orders } = this.props;
+        const { /*lang, */ loginIsRequired, id, dragons } = this.props;
         console.log("formdragon this.props", this.props);
         // console.log("id", id);
 
@@ -123,7 +108,7 @@ class FormDragon extends Component {
 
         return (
             <div>
-                {!id || orders.name ? (
+                {!id || dragons.name ? (
                     <form onSubmit={this.handleSubmit}>
                         <div type="text" className="form-group">
                             <Input
@@ -133,8 +118,8 @@ class FormDragon extends Component {
                                 isRequired={loginIsRequired}
                                 name="name"
                                 value={
-                                    this.props.orders.name
-                                        ? this.props.orders.name
+                                    this.props.dragons.name
+                                        ? this.props.dragons.name
                                         : ""
                                 }
                             />
@@ -146,8 +131,8 @@ class FormDragon extends Component {
                                 firstSubmit={firstInteraction}
                                 name="type"
                                 value={
-                                    this.props.orders.type
-                                        ? this.props.orders.type
+                                    this.props.dragons.type
+                                        ? this.props.dragons.type
                                         : ""
                                 }
                             />
@@ -193,8 +178,8 @@ class FormDragon extends Component {
 const mapStateToProps = state => {
     return {
         //dragonCreated: state.dragonCreated
-        orderList: state.orderList,
-        orders: state.orders
+        dragonList: state.dragonList,
+        dragons: state.dragons
     };
 };
 
@@ -207,7 +192,7 @@ const mapStateToProps = state => {
 };*/
 const mapDispatchToProps = dispatch => {
     return {
-        getOrder: id => dispatch({ type: "GET_ORDER", id: id }),
+        getDragon: id => dispatch({ type: "GET_DRAGON", id: id }),
         addDragon: (dragonName, dragonType) =>
             dispatch({
                 type: "ADD_DRAGON",

@@ -12,7 +12,7 @@ function ButtonStandard(props) {
         className,
         type,
         disabled,
-        icon,
+        // icon,
         onClick,
         // id,
         isLoading
@@ -28,12 +28,12 @@ function ButtonStandard(props) {
             <span>{textId}</span>
         );
 
-    const iconButton =
-        (text !== undefined || textId !== undefined) && icon !== undefined
-            ? "btn-with-icon"
-            : "";
-    const showIcon =
-        icon === undefined ? "" : <i className={`${iconButton} ${icon}`} />;
+    // const iconButton =
+    //     (text !== undefined || textId !== undefined) && icon !== undefined
+    //         ? "btn-with-icon"
+    //         : "";
+    // const showIcon =
+    //     icon === undefined ? "" : <i className={`${iconButton} ${icon}`} />;
 
     return (
         <button
@@ -53,7 +53,7 @@ function ButtonStandard(props) {
                 <p>Carregando</p>
             ) : null}
             {showText}
-            {showIcon}
+            {/* {showIcon} */}
         </button>
     );
 }
@@ -67,6 +67,6 @@ ButtonStandard.propTypes = {
     disabled: PropTypes.bool,
     textValues: PropTypes.object,
     className: PropTypes.string,
-    icon: PropTypes.string,
+    // icon: PropTypes.string,
     onClick: PropTypes.func
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { OrderListWithoutWithRouter } from "./OrderList";
+import { DragonListWithoutWithRouter } from "./DragonList";
 import { IntlProvider } from "react-intl";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
@@ -12,37 +12,37 @@ configure({ adapter: new Adapter() });
 
 const country = "pt-BR";
 
-describe("OrderList Container", () => {
-    const component = (
-        <IntlProvider
-            locale={country}
-            // key={country}
-            // messages={messages[{ country }]}
-            // defaultLocale={country}
-        >
-            <Provider store={store}>
-                <OrderListWithoutWithRouter checkList />
-            </Provider>
-        </IntlProvider>
-    );
+describe("DragonList Container", () => {
+  const component = (
+    <IntlProvider
+      locale={country}
+      // key={country}
+      // messages={messages[{ country }]}
+      // defaultLocale={country}
+    >
+      <Provider store={store}>
+        <DragonListWithoutWithRouter checkList />
+      </Provider>
+    </IntlProvider>
+  );
 
-    it("matches the snapshot", () => {
-        const tree = renderer.create(component).toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+  it("matches the snapshot", () => {
+    const tree = renderer.create(component).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-    it("generated an order list with a header inside", () => {
-        const wrapper = mount(component);
-        const header = wrapper.find(".order-list-header");
-        expect(header.length).toEqual(1);
-    });
+  it("generated a dragon list with a header inside", () => {
+    const wrapper = mount(component);
+    const header = wrapper.find(".dragon-list-header");
+    expect(header.length).toEqual(1);
+  });
 
-    it("generated an order list that is loading orders", () => {
-        const wrapper = mount(component);
-        const loading = wrapper
-            .find(".container div")
-            .last()
-            .text();
-        expect(loading).toBe("Carregando...");
-    });
+  it("generated a dragon list that is loading dragons", () => {
+    const wrapper = mount(component);
+    const loading = wrapper
+      .find(".container div")
+      .last()
+      .text();
+    expect(loading).toBe("Carregando...");
+  });
 });

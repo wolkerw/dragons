@@ -1,18 +1,18 @@
 import { takeEvery, put, call } from "redux-saga/effects";
 import axios from "../../utils/axios";
 
-function getOrdersFromApi() {
+function getDragonsFromApi() {
     return axios
         .get("/http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon", {})
         .then(result => {
             return result;
         })
         .catch(error => {
-            console.log("getOrdersFromApi error", error);
+            console.log("getDragonsFromApi error", error);
         });
 }
 
-function getOrderFromApi(arg) {
+function getDragonFromApi(arg) {
     return axios
         .get(
             "/http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/" +
@@ -23,7 +23,7 @@ function getOrderFromApi(arg) {
             return result;
         })
         .catch(error => {
-            //console.log("getOrderFromApi error", error);
+            //console.log("getDragonFromApi error", error);
         });
 }
 
@@ -75,24 +75,24 @@ function editDragonFromApi(arg) {
 }
 
 //generators
-function* getOrdersAsync() {
+function* getDragonsAsync() {
     try {
-        let { data } = yield call(getOrdersFromApi);
+        let { data } = yield call(getDragonsFromApi);
 
-        yield put({ type: "GET_ORDERS_ASYNC", payload: data });
+        yield put({ type: "GET_DRAGONS_ASYNC", payload: data });
     } catch (error) {
-        yield put({ type: "GET_ORDERS_ASYNC", payload: ["error"] });
+        yield put({ type: "GET_DRAGONS_ASYNC", payload: ["error"] });
         // console.log(error);
     }
 }
 
-function* getOrderAsync(arg) {
+function* getDragonAsync(arg) {
     try {
-        let { data } = yield call(getOrderFromApi, arg);
+        let { data } = yield call(getDragonFromApi, arg);
 
-        yield put({ type: "GET_ORDERS_ASYNC", payload: data });
+        yield put({ type: "GET_DRAGONS_ASYNC", payload: data });
     } catch (error) {
-        yield put({ type: "GET_ORDERS_ASYNC", payload: ["error"] });
+        yield put({ type: "GET_DRAGONS_ASYNC", payload: ["error"] });
         // console.log(error);
     }
 }
@@ -131,9 +131,9 @@ function* editDragonAsync(arg) {
 }
 
 // //Generator function
-export function* getOrdersWatcher(arg) {
-    yield takeEvery("GET_ORDERS", getOrdersAsync);
-    yield takeEvery("GET_ORDER", getOrderAsync);
+export function* getDragonsWatcher(arg) {
+    yield takeEvery("GET_DRAGONS", getDragonsAsync);
+    yield takeEvery("GET_DRAGON", getDragonAsync);
     yield takeEvery("REMOVE_DRAGON", removeDragonAsync);
     yield takeEvery("ADD_DRAGON", addDragonAsync);
     yield takeEvery("EDIT_DRAGON", editDragonAsync);

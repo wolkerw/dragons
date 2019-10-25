@@ -1,5 +1,5 @@
 import React from "react";
-import Order from "./Order";
+import Dragon from "./Dragon";
 import { IntlProvider } from "react-intl";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
@@ -9,13 +9,13 @@ configure({ adapter: new Adapter() });
 
 const country = "pt-BR";
 
-const orderData = {
+const dragonData = {
     id: "5",
     name: "Viserion",
     type: "Ômega"
 };
 
-describe("Order Component", () => {
+describe("Dragon Component", () => {
     const component = (
         <IntlProvider
             locale={country}
@@ -23,10 +23,10 @@ describe("Order Component", () => {
             // messages={messages[{ country }]}
             // defaultLocale={country}
         >
-            <Order
-                data={orderData}
+            <Dragon
+                data={dragonData}
                 functionProps={() => true}
-                id={orderData.id}
+                id={dragonData.id}
             />
         </IntlProvider>
     );
@@ -36,13 +36,13 @@ describe("Order Component", () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it("generated an order item with the edit button", () => {
+    it("generated a dragon item with the edit button", () => {
         const wrapper = mount(component);
         const checkbox = wrapper.find("button");
         expect(checkbox.length).toEqual(2);
     });
 
-    it("generated an order item with the columns showing", () => {
+    it("generated a dragon item with the columns showing", () => {
         const wrapper = mount(component);
         const checkbox = wrapper
             .find(".text-2")
