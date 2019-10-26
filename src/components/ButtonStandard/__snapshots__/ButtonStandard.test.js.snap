@@ -9,6 +9,5 @@ exports[`ButtonStandard Component matches the snapshot 1`] = `
   <span>
     Entrar
   </span>
-  
 </button>
 `;

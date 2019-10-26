@@ -21,8 +21,6 @@ class Input extends Component {
     render() {
         const { id, placeholder, isRequired, name } = this.props;
 
-        //this.setState({ value: value });
-
         const handleChange = event => {
             this.setState({ value: event.target.value });
 
@@ -67,7 +65,6 @@ class Input extends Component {
 }
 
 Input.propTypes = {
-    //id: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     firstSubmit: PropTypes.bool,
     isRequired: PropTypes.bool

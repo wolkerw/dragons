@@ -8,8 +8,6 @@ import "./DragonPage.scss";
 
 class DragonPage extends Component {
     render() {
-        // const { lang } = this.props;
-
         const match = matchPath(this.props.history.location.pathname, {
             path: "/dragon/:id",
             exact: true,
@@ -35,8 +33,6 @@ class DragonPage extends Component {
                                         <br />
                                         <FormDragon
                                             id={id !== "add" ? id : null}
-                                            // login={login}
-                                            // isLogged={isLogged}
                                         />
                                     </Col>
                                 </Row>
@@ -51,9 +47,7 @@ class DragonPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        // lang: state.language,
         dragonList: state.dragonList
-        //id: state.relatorio
     };
 };
 

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./InputPassword.scss";
-// import eye from "../../assets/images/icons/icon-eye.svg";
-// import eyeFalse from "../../assets/images/icons/icon-eye-false.svg";
 import { Form } from "react-bootstrap";
 
 class InputPassword extends Component {
@@ -16,15 +14,7 @@ class InputPassword extends Component {
     }
 
     render() {
-        const { /*id, */ placeholder } = this.props;
-        // const showHide = event => {
-        //     event.preventDefault();
-        //     event.stopPropagation();
-
-        //     this.setState({
-        //         type: this.state.type === "text" ? "password" : "text"
-        //     });
-        // };
+        const { placeholder } = this.props;
 
         const handleChange = event => {
             const value = event.target.value.length > 0 ? true : false;
@@ -42,7 +32,6 @@ class InputPassword extends Component {
         return (
             <div type="text" className="input-password" onBlur={onBlur}>
                 <Form.Control
-                    // id={id}
                     autoComplete="off"
                     name="password"
                     type={this.state.type}
@@ -56,13 +45,6 @@ class InputPassword extends Component {
                     }
                     onChange={handleChange}
                 />
-                {/* <div type="text" className="password-eye" onClick={showHide}>
-                    <img
-                        alt="Eye icon"
-                        width="16"
-                        src={this.state.type === "text" ? eye : eyeFalse}
-                    />
-                </div> */}
             </div>
         );
     }

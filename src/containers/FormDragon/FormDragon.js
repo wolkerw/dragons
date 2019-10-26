@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
-// import { TextLabel } from "../../components/Labels";
 import Input from "../../components/Input/Input";
-// import messages from "../../assets/i18n";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
 import "./FormDragon.scss";
 import "../../styles/base/_typography.scss";
@@ -33,31 +31,7 @@ class FormDragon extends Component {
         if (this.props.id) this.props.getDragon(this.props.id);
     }
 
-    /*componentWillMount() {
-        // if is logged, redirect to the main
-        try {
-            const isLogged = this.props.isLogged();
-
-            if (typeof isLogged === "string" && isLogged)
-                this.props.history.push(`/main`);
-        } catch (e) {
-            console.log("FormLogin componentWillMount catch error");
-        }
-    }*/
-
-    /*componentWillReceiveProps = () => {
-        console.log("componentWillReceiveProps props", this.props);
-    };*/
-
-    /*componentDidUpdate = () => {
-        console.log("2this.props", this.props);
-    };*/
-
     callback = (text, stateName, valid) => {
-        /*console.log("callback text", text);
-        console.log("callback stateName", stateName);
-        console.log("callback valid", valid);*/
-
         this.setState({ [stateName]: text, [stateName + "IsValid"]: valid });
     };
 
@@ -72,8 +46,7 @@ class FormDragon extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        /*console.log("event.target.name", event.target.name.value);
-        console.log("event.target.type", event.target.type.value);*/
+
         if (this.props.id) {
             this.props.editDragon(
                 event.target.name.value,
@@ -93,11 +66,7 @@ class FormDragon extends Component {
     }
 
     render() {
-        const { /*lang, */ loginIsRequired, id, dragons } = this.props;
-        console.log("formdragon this.props", this.props);
-        // console.log("id", id);
-
-        //console.log("dragonId", id);
+        const { loginIsRequired, id, dragons } = this.props;
 
         const {
             firstInteraction,
@@ -107,7 +76,7 @@ class FormDragon extends Component {
         } = this.state;
 
         return (
-            <div>
+            <div className="form-dragon">
                 {!id || dragons.name ? (
                     <form onSubmit={this.handleSubmit}>
                         <div type="text" className="form-group">
@@ -141,9 +110,6 @@ class FormDragon extends Component {
                             {!validInputs && !firstInteraction ? (
                                 <p>Dados incorretos!</p>
                             ) : (
-                                // <TextLabel
-                                //     id={messages[lang.name].loginError}
-                                // />
                                 ""
                             )}
                         </div>
@@ -157,14 +123,7 @@ class FormDragon extends Component {
                             <ButtonStandard
                                 disabled={!id && !(typeIsValid && nameIsValid)}
                                 textId={id ? "Editar" : "Cadastrar"}
-                                className={
-                                    "btn-login btn-rounded mt-2" //+
-                                    // (!(loginIsRequired
-                                    //     ? loginIsValid && passwordIsValid
-                                    //     : passwordIsValid)
-                                    //     ? " btn-login-disabled"
-                                    //     : " btn-hover")
-                                }
+                                className={"btn-login btn-rounded mt-2"}
                                 type="submit"
                             />
                         </div>
@@ -177,19 +136,11 @@ class FormDragon extends Component {
 
 const mapStateToProps = state => {
     return {
-        //dragonCreated: state.dragonCreated
         dragonList: state.dragonList,
         dragons: state.dragons
     };
 };
 
-/*const mapStateToProps = state => {
-    return {
-        authentication: state.authentication,
-        authorization: state.authorization,
-        lang: state.language
-    };
-};*/
 const mapDispatchToProps = dispatch => {
     return {
         getDragon: id => dispatch({ type: "GET_DRAGON", id: id }),
@@ -210,13 +161,11 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-// export for testing and storybook
 export const FormDragonWithoutWithRouter = connect(
     mapStateToProps,
     mapDispatchToProps
 )(FormDragon);
 
-// export for use
 export default withRouter(
     connect(
         mapStateToProps,

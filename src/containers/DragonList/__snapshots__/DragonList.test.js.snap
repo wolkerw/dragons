@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DragonList Container matches the snapshot 1`] = `
+<div
+  className="text-center dragon-list-container container"
+>
+  <div
+    className="row dragon-list-header"
+  >
+    <div
+      className="col-4"
+    >
+      <span>
+        Nome
+      </span>
+    </div>
+    <div
+      className="col-4"
+    >
+      <span>
+        Tipo
+      </span>
+    </div>
+    <div
+      className="col-2"
+    >
+      <span>
+        Remover
+      </span>
+    </div>
+    <div
+      className="col-2"
+    >
+      <span>
+        Editar
+      </span>
+    </div>
+  </div>
+  <div>
+    <p
+      className="text-3 text-color-primary my-0 pt-1"
+    >
+      Carregando...
+    </p>
+  </div>
+</div>
+`;

@@ -2,9 +2,7 @@ import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import PropTypes from "prop-types";
 import { Container } from "react-bootstrap";
-// import debounce from "lodash.debounce";
 import { Creators as List } from "../../store/ducks/dragonList";
 import Dragon from "../../components/Dragon/Dragon";
 import "./DragonList.scss";
@@ -13,53 +11,19 @@ class DragonList extends Component {
     constructor(props) {
         super(props);
 
-        // Initial State
         this.state = {
             error: false,
-            // hasMore: true,
             isLoading: false,
             list: []
         };
-
-        // this.pageScroll();
     }
 
     componentDidMount() {
-        // Fazendo o primeiro load de usuários
         this.props.dragonList.cleanDragons();
         this.props.getDragons();
 
         this.loadList();
     }
-
-    // pageScroll() {
-    //     // Configurando debounce e evento de scroll
-    //     window.onscroll = debounce(() => {
-    //         const {
-    //             loadList,
-    //             state: { error, isLoading /*, hasMore*/ }
-    //         } = this;
-
-    //         //Evento para interromper o loading
-    //         if (error || isLoading /* || !hasMore*/) return;
-
-    //         // Verificando se o scroll chegou a base da tela
-    //         if (
-    //             window.innerHeight + document.documentElement.scrollTop ===
-    //             document.documentElement.offsetHeight
-    //         ) {
-    //             loadList();
-    //         }
-    //     }, 100);
-    // }
-
-    // handleChecked = (checked, dragon) => {
-    //     if (!checked) {
-    //         this.props.dragonList.addDragon(dragon);
-    //     } else {
-    //         this.props.dragonList.removeDragon(dragon);
-    //     }
-    // };
 
     componentDidUpdate() {
         if (
@@ -104,22 +68,7 @@ class DragonList extends Component {
     };
 
     render() {
-        const { error, /*hasMore,*/ isLoading, list } = this.state;
-
-        //const { checkList } = this.props;
-
-        //const header = ["Nome", "Tipo", "Remover", "Editar"];
-
-        //let cols = 12;
-        //const length = header.length;
-
-        //cols = checkList === true ? cols - 1 : cols;
-
-        //const math = Number((cols / length).toFixed(1));
-
-        //const size = math > 1 ? math : 1;
-
-        //const style = ("col-" + size).replace(".", "-");
+        const { error, isLoading, list } = this.state;
 
         return (
             <Container className="text-center dragon-list-container">
@@ -144,12 +93,9 @@ class DragonList extends Component {
                             <Fragment key={i}>
                                 <Dragon
                                     data={dragon}
-                                    // functionProps={this.handleChecked}
-                                    id={`dragon-list-dragon-checkbox-${i + 1}`}
                                     status="idStatusConciliacao"
                                     removeDragon={this.removeDragon}
                                     editDragon={this.editDragon}
-                                    // checkList
                                 />
                             </Fragment>
                         );
@@ -167,13 +113,6 @@ class DragonList extends Component {
                         </p>
                     </div>
                 )}
-                {/* {!hasMore && (
-                    <div>
-                        <p className="text-3 text-color-primary font-weight-bolder my-3 pt-1">
-                            Não há mais dados
-                        </p>
-                    </div>
-                )} */}
             </Container>
         );
     }
@@ -197,10 +136,6 @@ const mapDispatchToProps = dispatch => {
         dragonList: bindActionCreators(List, dispatch)
     };
 };
-
-// DragonList.propTypes = {
-//     checkList: PropTypes.bool
-// };
 
 export const DragonListWithoutWithRouter = connect(
     mapStateToProps,

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormLogin Component matches the snapshot 1`] = `
-<div>
+<div
+  className="form-dragon"
+>
   <form
     onSubmit={[Function]}
   >
@@ -52,12 +54,12 @@ exports[`FormLogin Component matches the snapshot 1`] = `
     >
       <button
         className="btn-login btn-rounded mt-2"
+        disabled={true}
         type="submit"
       >
         <span>
           Cadastrar
         </span>
-        
       </button>
     </div>
   </form>

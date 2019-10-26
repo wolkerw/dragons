@@ -4,7 +4,6 @@ import { IntlProvider } from "react-intl";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import renderer from "react-test-renderer";
-// import messages from "../../assets/i18n";
 
 const country = "pt-BR";
 
@@ -12,12 +11,7 @@ configure({ adapter: new Adapter() });
 
 describe("ButtonStandard Component", () => {
     const component = (
-        <IntlProvider
-            locale={country}
-            // key={country}
-            // messages={messages[{ country }]}
-            // defaultLocale={country}
-        >
+        <IntlProvider locale={country}>
             <ButtonStandard
                 textId="Entrar"
                 className="btn btn-primary"

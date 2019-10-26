@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-// import { TextLabel } from "../../components/Labels";
 import Input from "../../components/Input/Input";
 import InputPassword from "../../components/InputPassword/InputPassword";
-// import messages from "../../assets/i18n";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
 import "./FormLogin.scss";
 import "../../styles/base/_typography.scss";
@@ -19,23 +16,19 @@ class FormLogin extends Component {
             password: "",
             loginIsValid: false,
             passwordIsValid: false,
-            firstInteraction: true,
-            completedAuth: false
+            firstInteraction: true
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    saveLoginData(token /*, profiles, chapa*/) {
+    saveLoginData(token) {
         localStorage.setItem("TOKEN", token);
-        // localStorage.setItem("profiles", JSON.stringify(profiles));
-        // localStorage.setItem("chapa", chapa);
 
         return true;
     }
 
     componentWillMount() {
-        // if is logged, redirect to the main
         try {
             const isLogged = this.props.isLogged();
 
@@ -46,36 +39,8 @@ class FormLogin extends Component {
         }
     }
 
-    componentDidUpdate = () => {
-        if (this.state.completedAuth) return;
-
-        let gotToken =
-            this.props.authentication && this.props.authentication.length;
-        /* let gotPermissions =
-            this.props.authorization && this.props.authorization.length; */
-
-        // test if the redux updated the props
-        if (gotToken) {
-            //&& !gotPermissions
-            // this.props.getAuthorization(
-            //     localStorage.getItem("TOKEN")
-            //     // JSON.parse(localStorage.getItem("profiles"))
-            // );
-
-            this.setState({ completedAuth: true });
-            this.props.history.push(`/main`);
-        }
-    };
-
     login = () => {
-        if (this.state.completedAuth) return;
-
-        /*let gotToken =
-            this.props.authentication && this.props.authentication.length;
-        let gotPermissions =
-            this.props.authorization && this.props.authorization.length;*/
-
-        this.props.getAuthentication();
+        this.props.history.push(`/main`);
     };
 
     callback = (text, stateName, valid) => {
@@ -99,7 +64,7 @@ class FormLogin extends Component {
     }
 
     render() {
-        const { /*lang, */ loginIsRequired } = this.props;
+        const { loginIsRequired } = this.props;
         const {
             firstInteraction,
             validInputs,
@@ -127,7 +92,6 @@ class FormLogin extends Component {
                 </div>
                 <div className="error-message text-1">
                     {!validInputs && !firstInteraction ? (
-                        // <TextLabel id={messages[lang.name].loginError} />
                         <p>Dados incorretos!</p>
                     ) : (
                         ""
@@ -163,39 +127,6 @@ class FormLogin extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        authentication: state.authentication
-        //authorization: state.authorization,
-        // lang: state.language
-    };
-};
+export const FormLoginWithoutWithRouter = FormLogin;
 
-const mapDispatchToProps = dispatch => {
-    return {
-        getAuthentication: () =>
-            dispatch({
-                type: "GET_AUTHENTICATION"
-            }) /*,
-        getAuthorization: (token, profiles) =>
-            dispatch({
-                type: "GET_AUTHORIZATION",
-                token: token,
-                profiles: profiles
-            })*/
-    };
-};
-
-// export for testing and storybook
-export const FormLoginWithoutWithRouter = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(FormLogin);
-
-// export for use
-export default withRouter(
-    connect(
-        mapStateToProps,
-        mapDispatchToProps
-    )(FormLogin)
-);
+export default withRouter(FormLogin);

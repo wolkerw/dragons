@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Header.scss";
-// import logoRenner from "../../assets/images/logos/logo-lojas-renner.svg";
 
 class Header extends PureComponent {
     render() {

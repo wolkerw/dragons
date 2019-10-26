@@ -3,7 +3,6 @@ import Dragon from "./Dragon";
 import { IntlProvider } from "react-intl";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-// import messages from "../../assets/i18n";
 
 configure({ adapter: new Adapter() });
 
@@ -17,12 +16,7 @@ const dragonData = {
 
 describe("Dragon Component", () => {
     const component = (
-        <IntlProvider
-            locale={country}
-            // key={country}
-            // messages={messages[{ country }]}
-            // defaultLocale={country}
-        >
+        <IntlProvider locale={country}>
             <Dragon
                 data={dragonData}
                 functionProps={() => true}

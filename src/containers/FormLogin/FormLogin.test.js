@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import { configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import renderer from "react-test-renderer";
-// import ptTranslations from "../../assets/i18n/messages-pt.json";
 import { IntlProvider } from "react-intl";
 import store from "./../../store";
 
@@ -17,12 +16,7 @@ const isLogged = () => {
 
 describe("FormLogin Component", () => {
     const component = (
-        <IntlProvider
-            locale={country}
-            // key={country}
-            // messages={ptTranslations}
-            // defaultLocale={country}
-        >
+        <IntlProvider locale={country}>
             <Provider store={store}>
                 <FormLoginWithoutWithRouter isLogged={isLogged} />
             </Provider>

@@ -6,7 +6,10 @@ function getAuthenticationFromApi() {
         method: "get",
         url: process.env.REACT_APP_BASE_URL_LOCAL + "orders.json"
     });*/
-    return [
+    return {
+        userId: 1,
+        name: "Wolker"
+    }; /*[
         {
             idPedido: "0000001",
             qtPecas: 35,
@@ -202,7 +205,7 @@ function getAuthenticationFromApi() {
             fornecedor: "Lojas Renner serviços Meta",
             idStatusConciliacao: 2
         }
-    ];
+    ];*/
 }
 
 //generators

@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-// import messages from "../../assets/i18n";
 import ButtonStandard from "../../components/ButtonStandard/ButtonStandard";
 import DragonList from "../../containers/DragonList/DragonList";
 import "./MainPage.scss";
@@ -13,8 +12,6 @@ class MainPage extends Component {
     };
 
     logout = () => {
-        // localStorage.removeItem("TOKEN");
-        // localStorage.removeItem("profiles");
         this.props.logout();
         this.props.history.push(`/login`);
     };
@@ -47,7 +44,7 @@ class MainPage extends Component {
                         </Row>
                     </Container>
 
-                    <DragonList /*checkList*/ />
+                    <DragonList />
                 </div>
             </Fragment>
         );
@@ -56,7 +53,6 @@ class MainPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        // lang: state.language,
         dragonList: state.dragonList
     };
 };

@@ -56,7 +56,6 @@ exports[`FormLogin Component matches the snapshot 1`] = `
       <span>
         Entrar
       </span>
-      
     </button>
   </div>
 </form>
