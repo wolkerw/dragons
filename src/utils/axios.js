@@ -13,30 +13,4 @@ const instance = axios.create({
     }
 });
 
-/**
- * Request interceptor
- */
-/*instance.interceptors.request.use(
-    // get the token to pass in the header
-    function(config) {
-        const token = localStorage.getItem("TOKEN");
-        config.headers.Authorization = token;
-
-        return config;
-    },
-    error => {
-        return Promise.reject(error);
-    }
-);
-
-/**
- * Response interceptor
- */
-/*instance.interceptors.response.use(
-    response => response,
-    error => {
-        return Promise.reject(error.response);
-    }
-);*/
-
 export default instance;

@@ -30,21 +30,18 @@ const getDragon = (state = INITIAL_STATE, action) => {
 
 const removeDragon = (state = INITIAL_STATE, action) => {
     const newState = { ...state };
-    // TODO
     newState.dragonList = action.payload;
     return newState.dragonList;
 };
 
 const addDragon = (state = INITIAL_STATE, action) => {
     const newState = { ...state };
-    // TODO
     newState.dragonList = action.payload;
     return newState.dragonList;
 };
 
 const editDragon = (state = INITIAL_STATE, action) => {
     const newState = { ...state };
-    // TODO
     newState.dragonList = action.payload;
     return newState.dragonList;
 };
