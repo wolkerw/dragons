@@ -12,6 +12,11 @@ npm install
 npm start
 ```
 
+### Execute the react tests
+```
+npm test
+```
+
 ### Dados de acesso
 
 Login: 
