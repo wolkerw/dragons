@@ -16,7 +16,7 @@
         "formik": "1.5.7",
         "lodash.debounce": "4.0.8",
         "loglevel": "1.6.4",
-        "node-sass": "4.12.0",
+        "node-sass": "4.14.1",
         "react": "16.8.6",
         "react-bootstrap": "1.0.0-beta.9",
         "react-dom": "16.8.6",
